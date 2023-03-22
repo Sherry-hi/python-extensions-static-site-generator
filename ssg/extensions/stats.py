@@ -17,7 +17,7 @@ def written():
 @hooks.register("stats")
 def stats():
     final_time = time.time()-start_time
-    avarage = final_time/total_written if total_written is not 0 else print (total_written)
+    avarage = final_time/total_written if total_written else 0
     report = "Converted: {} · Time: {:.2f} sec · Avg: {:.4f} sec/file"
     print(report.format(total_written,final_time,avarage))
     
