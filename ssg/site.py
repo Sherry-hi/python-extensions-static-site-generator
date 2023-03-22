@@ -29,6 +29,7 @@ class Site:
 
     def build(self):
         extensions.load_bundled()
+        hooks.event("collect_files", self.source, self.parsers)
         hooks.event("start_build")
         
         self.dest.mkdir(parents=True, exist_ok=True)
