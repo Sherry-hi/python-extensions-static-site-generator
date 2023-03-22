@@ -7,7 +7,7 @@ def collect_files(source, site_parsers):
     for path in source.rglog("*"):
         for parser in site_parsers(list(filter(valid,site_parsers))):
             if parser.valid_file_ext(path.suffix):
-                file.append(path)
+                files.append(path)
             
 @hooks.register("generate_menu")  
 def generate_menu(html,ext):
